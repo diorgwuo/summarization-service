@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'war'
     id 'org.springframework.boot' version '4.1.1'
     id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -21,10 +20,10 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-kafka'
-    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.projectlombok:lombok:1.18.46'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
-    testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
+    annotationProcessor 'org.projectlombok:lombok:1.18.46'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
