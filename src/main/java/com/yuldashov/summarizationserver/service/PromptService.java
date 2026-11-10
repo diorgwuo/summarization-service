@@ -1,7 +1,7 @@
 package com.yuldashov.summarizationserver.service;
 
 import com.yuldashov.summarizationserver.dto.summarization.SummarizationRequest;
-import com.yuldashov.summarizationserver.dto.TaskDto;
+import com.yuldashov.summarizationserver.dto.Task;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,11 +10,11 @@ public class PromptService {
         StringBuilder sb = new StringBuilder();
         sb.append("Пользователь: " ).append(request.username()).append("\n\n");
         sb.append("Сделано за сутки = ").append(request.doneTasks().size()).append(":\n");
-        for (TaskDto task : request.doneTasks()) {
+        for (Task task : request.doneTasks()) {
             sb.append("- ").append(task.title()).append("\n");
         }
         sb.append("Не сделано = ").append(request.undoneTasks().size()).append(":\n");
-        for (TaskDto task : request.undoneTasks()) {
+        for (Task task : request.undoneTasks()) {
             sb.append("- ").append(task.title()).append("\n");
         }
         return sb.toString();

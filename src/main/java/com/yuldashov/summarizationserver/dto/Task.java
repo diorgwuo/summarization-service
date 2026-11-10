@@ -2,7 +2,7 @@ package com.yuldashov.summarizationserver.dto;
 
 import java.time.LocalDateTime;
 
-public record TaskDto(
+public record Task(
         Long id,
         String title,
         String description,
